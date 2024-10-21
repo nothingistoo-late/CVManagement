@@ -4,6 +4,39 @@
              xmlns:local="clr-namespace:MyCV"
              StartupUri="LoginWindow.xaml">
     <Application.Resources>
-         
+         <!--Ta làm css để dùng chung cho mọi màn hình-->
+        <!--Đoạn lệnh này làm style mặc định cho nút bấm tức là mọi button sau khi vẽ nếu không có setting đặt biệtt thì dùng style mặc định này -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+        </Style>
+
+        <!--Style thứ 2 của nút bấm, mình có thể làm nhiều style khác nhau cho mỗi loại UI component( Nút bấ, ô nhập, checkbox, radio button)-->
+        <!--Nút bấm có màu chữ vàng, màu nền ói ói ...-->
+        <Style x:Key="MauOiOI" TargetType="Button">
+            <Setter Property="Background" Value="#39ff14"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+        </Style>
+        
+        
+        <!--Style mặc định đành cho label-->
+        <Style TargetType= "Label">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Foreground" Value="Yellow"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+        </Style>
+        <!--Style mặc định đành cho header-->
+        <Style x:Key="CyanLabel" TargetType="Label">
+            <Setter Property="Background" Value="#00ffff"></Setter>
+            <Setter Property="Foreground" Value="#ffff00"></Setter>
+            <Setter Property="FontSize" Value="40"></Setter>
+            <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+        </Style>
+        <!-- về nhà làm thêm cho targetType bằng textBox ô nhập và các component khác nếu muốn: checkBox, radioButton, ComboBox, DatePicker-->
     </Application.Resources>
 </Application>

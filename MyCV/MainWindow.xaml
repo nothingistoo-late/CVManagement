@@ -5,9 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCV"
         mc:Ignorable="d"
-        Title="Chi Trung" Height="450" Width="800" Background="#ff4500"
+        Title="Chi Trung" Height="527" Width="952" Background="#ff4500"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Margin="0,0,0,-6">
+        <Button x:Name="LoadButton" Content="Load Data" HorizontalAlignment="Left" Height="58" Margin="742,21,0,0" VerticalAlignment="Top" Width="163" Click="LoadButton_Click"/>
+        <Button Style="{StaticResource MauOiOI}" Content="Create" HorizontalAlignment="Left" Height="61" Margin="742,119,0,0" VerticalAlignment="Top" Width="163"/>
+        <Label Content="Danh sách ứng viên" HorizontalAlignment="Left" Height="78" Margin="10,10,0,0" VerticalAlignment="Top" Width="420" Style="{StaticResource CyanLabel}" />
+
+        <!-- <DataGrid x:Name="CVListDataGrid" HorizontalAlignment="Left" Height="301" Margin="20,119,0,0" VerticalAlignment="Top" Width="618" AutoGenerateColumns="True" />
+        
+        //auto generate colum = true thì cái lưới nó sẽ lấy property của object làm tên cột!!! ví dụ nếu show ds SV, thì lấy Id,Name, Yob, Gpa làm tên cột từng nhát new SV là dòng
+        // ta sẽ độ tên cột, độ cột của cột, nhưng nhớ là phải map cột với property cho đúng, do mình chủ động tạo cột với data của mình
+        -->
+        <DataGrid x:Name="CVListDataGrid" HorizontalAlignment="Left" Height="301" Margin="20,119,0,0" VerticalAlignment="Top" Width="618" AutoGenerateColumns="false">
+           <!--Define tên cột theo nhu cầu, map với property của data Student, Lecture, CV.. sẽ đổ vào-->
+            <DataGrid.Columns> <!--Thẻ <TH> <TR> -->
+                <DataGridTextColumn Header="Mã số" Width="50" Binding="{Binding Id}"/> <!-- chính xác tên Prop của object sẽ đổ vào -->
+                <DataGridTextColumn Header="Tên Ứng Viên" Width="120" Binding="{Binding Name}"/> <!-- chính xác tên Prop của object sẽ đổ vào -->
+                <DataGridTextColumn Header="Năm Sinh" Width="70" Binding="{Binding Yob}"/> <!-- chính xác tên Prop của object sẽ đổ vào -->
+                <DataGridTextColumn Header="Vị Trí Ứng Tuyển" Width="100" Binding="{Binding Position}"/> <!-- chính xác tên Prop của object sẽ đổ vào -->
+                
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>
